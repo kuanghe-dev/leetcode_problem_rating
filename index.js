@@ -1,7 +1,7 @@
 new gridjs.Grid({
     columns: [{
         name: "ID",
-        width: "7%",
+        width: "10%",
     }, {
         name: "Title",
         formatter: (_, row) => gridjs.html(`<a href="https://leetcode.com/problems/${row.cells[2].data}" target="_blank">${row.cells[1].data}</a>`),
@@ -39,11 +39,11 @@ new gridjs.Grid({
         }
     }, {
         name: "Rating",
-        width: "11%",
+        width: "15%",
         formatter: (cell) => Math.round(cell)
     }],
     server: {
-        url: "./data.json",
+        url: "https://zerotrac.github.io/leetcode_problem_rating/data.json",
         then: data => data.map(entry => [entry.ID, entry.Title, entry.TitleSlug, entry.ContestSlug, entry.ContestID, entry.Rating])
     },
     sort: true,
