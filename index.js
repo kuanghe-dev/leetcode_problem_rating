@@ -1,7 +1,6 @@
 new gridjs.Grid({
     columns: [{
         name: "ID",
-        width: "10%",
     }, {
         name: "Title",
         formatter: (_, row) => gridjs.html(`<a href="https://leetcode.com/problems/${row.cells[2].data}" target="_blank">${row.cells[1].data}</a>`),
@@ -39,7 +38,6 @@ new gridjs.Grid({
         }
     }, {
         name: "Rating",
-        width: "15%",
         formatter: (cell) => Math.round(cell)
     }],
     server: {
@@ -47,7 +45,7 @@ new gridjs.Grid({
         then: data => data.map(entry => [entry.ID, entry.Title, entry.TitleSlug, entry.ContestSlug, entry.ContestID, entry.Rating])
     },
     sort: true,
-    autoWidth: false,
+    autoWidth: true,
     search: {
         selector: (cell, rowIndex, cellIndex) => (cellIndex === 2 || cellIndex == 3 || cellIndex == 5) ? "" : cell
     },
