@@ -42,7 +42,9 @@ new gridjs.Grid({
     }],
     server: {
         url: "https://zerotrac.github.io/leetcode_problem_rating/data.json",
-        then: data => data.map(entry => [entry.ID, entry.Title, entry.TitleSlug, entry.ContestSlug, entry.ContestID, entry.Rating])
+        then: data => data.sort((x, y) => {
+            return y.ID - x.ID;
+        }).map(entry => [entry.ID, entry.Title, entry.TitleSlug, entry.ContestSlug, entry.ContestID, entry.Rating])
     },
     sort: true,
     autoWidth: true,
