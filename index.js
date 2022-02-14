@@ -49,7 +49,7 @@ new gridjs.Grid({
     sort: true,
     autoWidth: true,
     search: {
-        selector: (cell, rowIndex, cellIndex) => (cellIndex === 2 || cellIndex == 3 || cellIndex == 5) ? "" : cell
+        selector: (cell, rowIndex, cellIndex) => (cellIndex === 2 || cellIndex === 3 || cellIndex === 5) ? "" : cell
     },
     pagination: {
         limit: 20,
